@@ -65,6 +65,7 @@ header{
     }
     .avatar{
         height: 40px;
+        padding-right: 0;
     }
 }
 
@@ -175,18 +176,18 @@ main{
             color: black;
             width: 100%;
             line-height: 1.5em;
-            width: 90%;
+            width: 95%;
             text-align: left;
-            font-size: 1.5em;
+            font-size: 1.2em;
             padding-bottom: 10px;
         }
 
         p:nth-child(3){
             color: grey;
             line-height: 1.5em;
-            width: 90%;
+            width: 95%;
             text-align: left;
-            font-size: 1.1em;
+            font-size: 1em;
         }
 
         .rule{
@@ -198,13 +199,16 @@ main{
         .content-bottom{
             display: grid;
             grid-template-columns: auto auto;
-            width: 90%;
+            width: 95%;
             margin-top: 20px;
             div{
                 display: flex;
                 align-items: center;
                 justify-items: center;
-                font-size: 0.9em;
+                font-size: 0.8em;
+                div{
+                    padding-left: 10px;
+                }
             }
             div:first-child{
                 font-weight: bold;
@@ -240,7 +244,7 @@ main{
             }
 
             p:nth-child(2){
-                font-size: 1.5em;
+                font-size: 1.2em;
                 margin: auto;
                 font-weight: bold;
                 color: #29B6F6;
@@ -249,8 +253,9 @@ main{
             }
             button{
                 background: #29B6F6;
+                width: fit-content;
                 padding: 15px 40px;
-                font-size: 2em;
+                font-size: 1.5em;
                 font-weight: bold;
             }
         }
