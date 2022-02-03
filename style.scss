@@ -6,7 +6,7 @@ $bg-c: #fafafa;
 $shadow-c: #e2e2e2;
 $text-c: #305C7C;
 
-
+// Mobile view
 *{
     margin: 0;
     padding: 0;
@@ -28,15 +28,14 @@ header{
     height: fit-content;
     box-shadow: 0px 5px 30px 0px $shadow-c;
     padding: 15px 10px 15px 20px;
-    display: grid;
-    grid-template-columns: auto 30% auto;
-    align-items: center;
     position: sticky;
     top: 0;
+    z-index: 100;
     div:first-child{
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        position: absolute;
     }
     div:last-child{
         display: flex;
@@ -52,6 +51,38 @@ header{
     }
     .logo{
         height: 40px;
+    }
+    .search-area{
+        position: fixed;
+        width: 100%;
+        height: fit-content;
+        margin: auto;
+        visibility: hidden;
+    }
+    .search{
+        background: white;
+        border: solid 2px $M-Primary-c;
+        width: 90%;
+        left: 5%;
+        right: 5%;
+        height: inherit;
+        padding: 12px 30px 12px 35px;
+        border-radius: 20px;
+        position: absolute;
+        outline: none;
+    }
+    .close{
+        color: $shadow-c;
+        position: absolute;
+        padding: 12px;
+        cursor: pointer;
+        right: 5%;
+    }
+    .search-overlay{
+        position: absolute;
+        height: 40px;
+        left: 5%;
+        padding: 12px;
     }
     .search-icon{
         background: $shadow-c;
@@ -69,16 +100,95 @@ header{
     }
 }
 
-// main
-main{
+// container
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+// left
+.left{
+    // background: white;
+    // border-radius: 15px;
+    // box-shadow: 0px 0px 50px 1px $shadow-c;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    .menu{
+        width: fit-content;
+        div{
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: border 0.3s;
+            img{
+                height: 25px;
+                padding-right: 20px;
+            }
+        }
+    }
+    .menu div:hover{
+        background: #d8ffed;
+        border-left: solid 10px $M-Primary-c;
+        color: $M-Primary-c;
+    }
+    .menu div:nth-child(1):hover img{
+        content: url('./images/home-green.png');
+    }
+    .menu div:nth-child(2):hover img{
+        content: url('./images/explore-green.png');
+    }
+    .menu div:nth-child(3):hover img{
+        content: url('./images/marketplace-green.png');
+    }
+    .menu div:nth-child(4):hover img{
+        content: url('./images/setting-green.png');
+    }
+}
+
+// right
+.right{
+    padding: 20px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 30px;
+    button{
+        width: 100%;
+        height: fit-content;
+        padding: 10px 30px;
+        background-color: $M-Primary-c;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 1em;
+    }
+}
+
+// right and left aside
+.right, .left{
+    width: 25%;
+    display: none;
+}
+
+// main
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
 
     .content-box{
         background: white;
-        width: 80%;
+        width: 95%;
         height: fit-content;
         padding: 30px;
         border-radius: 15px;
@@ -86,15 +196,18 @@ main{
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 30px;
-        p:first-child{
+        margin-top: 20px;
+        .get-health{
+            display: none;
+        }
+        p:nth-child(2){
             color: $text-c;
             font-size: 1.2em;
             font-weight: bold;
             text-align: center;
             padding-bottom: 10px;
         }
-        p:nth-child(2){
+        p:nth-child(3){
             font-size: 0.9em;
             text-align: center;
             padding-bottom: 30px;
@@ -110,7 +223,7 @@ main{
     }
 
     .section{
-        width: 80%;
+        width: 95%;
         p:first-child{
             text-align: left;
             width: 100%;
@@ -160,7 +273,7 @@ main{
             grid-row-gap: 10px;
             justify-items: center;
             align-self: baseline;
-            left: 12%;
+            left: 4%;
 
             img{
                 width: 1.5em;
@@ -201,6 +314,7 @@ main{
             grid-template-columns: auto auto;
             width: 95%;
             margin-top: 20px;
+            color: grey;
             div{
                 display: flex;
                 align-items: center;
@@ -222,7 +336,7 @@ main{
                 justify-content: space-around;
             }
             .user-img{
-                height: 20px;
+                width: 20px;
             }
         }
     }
@@ -261,4 +375,135 @@ main{
         }
     }
 
+}
+
+
+
+
+// tablet view at 810px
+@media screen and (min-width: 810px) {
+    main{
+        .content-box{
+            align-items: flex-start;
+            .get-health{
+                display: block;
+                position: absolute;
+                right: 50px;
+            }
+            p:nth-child(2), p:nth-child(3){
+                text-align: left;
+                width: 30%;
+            }
+        }
+        .question{
+            p, p:nth-child(2), p:nth-child(3){
+                width: 100%;
+                text-align: left;
+            }
+            .content-bottom{
+                font-size: 1.4em;
+                .user-img{
+                    width: 30px;
+                }
+            }
+        }
+    }
+}
+
+// web medium view at 900px
+@media screen and (min-width: 900px) {
+    .container{
+        .right{
+            width: 20%;
+            display: flex;
+            position: fixed;
+            right: 0;
+        }
+    }
+    main{
+        width: 80%;
+        margin-right: 15%;
+        .content-box{
+            .get-health{
+                right: 30%;
+            }
+        }
+        .section{
+            position: fixed;;
+            width: 18%;
+            right: 10px;
+            top: 140px;
+            border-radius: 0px;
+            font-size: 0.9em;
+            padding: 10px;
+            height: fit-content;
+            padding: 15px 15px 30px 15px;
+            p, p:nth-child(3){
+                padding: 10px 0px 20px 0px;
+            }
+        }
+        .section-btn{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-row-gap: 10px;
+            width: 100%;
+            height: fit-content;
+            button{
+                width: fit-content;
+                height: fit-content;
+                padding: 5px 10px;
+                border-radius: 20px;
+                align-items: center;
+                flex-direction: row;
+                img{
+                    width: 15px;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+// web medium view at 1200px
+@media screen and (min-width: 1200px) {
+    main{
+        width: 80%;
+        margin-left: 15%;
+        .content-box{
+            .get-health{
+                right: 20%;
+            }
+        }
+        .question{
+            .side-btn{
+                left: 17.5%;
+            }
+        }
+    }
+    .container{
+        .left{
+            width: 20%;
+            background: transparent;
+            position: fixed;
+        }
+        .right{
+            width: 17%;
+            padding: 20px;
+        }
+        .section{
+            width: 15%;
+        }
+    }
+
+    header{
+        .menu-icon{
+            display: none;
+        }
+    }
+
+    .container{
+        .left{
+            display: flex;
+        }
+    }
 }
