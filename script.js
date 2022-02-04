@@ -27,6 +27,11 @@ function openSearch(){
 }
 
 function closeSearch(){
-    var searchArea = document.querySelector(".search-area");
-    searchArea.style.visibility = "hidden";
+    if(document.body.clientWidth <= 900){
+        var searchArea = document.querySelector(".search-area");
+        searchArea.style.visibility = "hidden";
+    }else{
+        searchArea.style.visibility = "visible";
+    }
+    
 }
