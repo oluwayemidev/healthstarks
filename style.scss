@@ -20,6 +20,8 @@ $text-c: #305C7C;
 body{
     width: 100%;
     background: $bg-c;
+    margin: 0;
+    padding: 0;
 }
 
 // header
@@ -30,13 +32,14 @@ body{
     box-shadow: 0px 5px 30px 0px $shadow-c;
     padding: 15px 10px 15px 20px;
     position: sticky;
+    display: flex;
+    justify-content: space-between;
     top: 0;
     z-index: 100;
     div:first-child{
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        position: absolute;
     }
     div:last-child{
         display: flex;
