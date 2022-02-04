@@ -23,6 +23,9 @@ body{
     margin: 0;
     padding: 0;
 }
+button{
+    cursor: pointer;
+}
 
 // header
 .header{
@@ -436,7 +439,6 @@ main{
             display: flex;
             position: fixed;
             right: 20px;
-            z-index: -3;
         }
     }
     main{
@@ -457,7 +459,6 @@ main{
             padding: 10px;
             height: fit-content;
             padding: 15px 15px 30px 15px;
-            z-index: -3;
             p, p:nth-child(3){
                 padding: 10px 0px 20px 0px;
             }
@@ -514,6 +515,31 @@ main{
             width: 17%;
             right: 40px;
         }
+        .telegram{
+            position: fixed;
+            width: 18%;
+            left: 20px;
+            top: 400px;
+            padding: 15px;
+            div{
+                width: fit-content;
+                padding: 10px;
+                .telegram-icon{
+                    height: 50px;
+                    width: auto;
+                }
+                p, p:nth-child(2){
+                    max-width: unset;
+                    width: 80%;
+                    text-align: center;
+                    font-size: 1em;
+                }
+                button{
+                    padding: 10px;
+                    width: 80%;
+                }
+            }
+        }
     }
 
     .header{
@@ -525,6 +551,33 @@ main{
     .container{
         .left{
             display: flex;
+        }
+    }
+}
+@media screen and (max-height: 650px) and (min-width: 1200px) {
+    .container{
+        .telegram{
+            position: static;
+            width: 95%;
+            padding: 15px;
+            div{
+                width: 100%;
+                padding: 10px;
+                .telegram-icon{
+                    height: 50px;
+                    width: auto;
+                }
+                p, p:nth-child(2){
+                    max-width: unset;
+                    width: 80%;
+                    text-align: center;
+                    font-size: 1em;
+                }
+                button{
+                    padding: 10px;
+                    width: 80%;
+                }
+            }
         }
     }
 }
