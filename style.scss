@@ -23,7 +23,7 @@ body{
 }
 
 // header
-header{
+.header{
     background: white;
     width: 100%;
     height: fit-content;
@@ -376,7 +376,7 @@ main{
 
 // tablet view at 810px
 @media screen and (min-width: 810px) {
-    header{
+    .header{
         .search-area{
             width: 70%;
         }
@@ -414,7 +414,7 @@ main{
 
 // web medium view at 900px
 @media screen and (min-width: 900px) {
-    header{
+    .header{
         .search-area{
             visibility: visible;
         }
@@ -508,7 +508,7 @@ main{
         }
     }
 
-    header{
+    .header{
         .menu-icon{
             display: none;
         }
