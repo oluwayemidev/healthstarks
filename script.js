@@ -1,7 +1,7 @@
 function toggleMenu(){
     var menuIcon = document.querySelector(".menu-icon");
     var menubar = document.querySelector(".left");
-    var boxHeader = document.querySelector("header");
+    var boxHeader = document.querySelector(".header");
 
     if (menubar.style.display == "block"){
         menuIcon.src = "./images/menu.png";
