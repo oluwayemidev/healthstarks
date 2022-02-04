@@ -60,19 +60,17 @@ body{
         position: fixed;
         width: 100%;
         height: fit-content;
-        margin: auto;
         visibility: hidden;
     }
     .search{
         background: #eeecec;
         border: none;
-        width: 93%;
-        left: 5%;
-        right: auto;
+        width: 95%;
         height: inherit;
         padding: 12px 30px 12px 35px;
         position: absolute;
         outline: none;
+        left: 5%;
     }
     .search-overlay{
         position: absolute;
