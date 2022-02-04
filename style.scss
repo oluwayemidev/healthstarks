@@ -59,6 +59,7 @@ body{
     .search-area{
         position: fixed;
         width: 100%;
+        left: 0;
         height: fit-content;
         visibility: hidden;
     }
@@ -70,7 +71,7 @@ body{
         padding: 12px 30px 12px 35px;
         position: absolute;
         outline: none;
-        left: 5%;
+        left: 2.5%;
     }
     .search-overlay{
         position: absolute;
