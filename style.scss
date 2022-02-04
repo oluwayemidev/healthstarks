@@ -68,7 +68,7 @@ body{
         border: none;
         width: 95%;
         height: inherit;
-        padding: 12px 30px 12px 35px;
+        padding: 12px 30px 12px 50px;
         position: absolute;
         outline: none;
         left: 2.5%;
@@ -419,6 +419,12 @@ main{
     .header{
         .search-area{
             visibility: visible;
+            width: 60%;
+            left: 40%;
+        }
+        .search-overlay{
+            position: inherit;
+            left: calc(40% + 30px);
         }
         .search-icon{
             display: none;
