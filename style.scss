@@ -63,12 +63,14 @@ button{
         position: fixed;
         width: 100%;
         left: 0;
+        top: 40px;
         height: fit-content;
         visibility: hidden;
     }
     .search{
         background: #eeecec;
         border: none;
+        border-radius: 8px;
         width: 95%;
         height: inherit;
         padding: 12px 30px 12px 50px;
@@ -168,6 +170,47 @@ button{
         border-radius: 10px;
         color: white;
         font-size: 1em;
+    }
+    .my-question{
+        background: white;
+        box-shadow: 0px 0px 50px 1px $shadow-c;
+        border-radius: 8px;
+        margin-top: 200px;
+        padding: 20px 20px 40px 20px;
+        .side-btn{
+            width: fit-content;
+            position: absolute;
+            display: grid;
+            margin: initial;
+            grid-template-rows: auto auto auto;
+            grid-row-gap: 3px;
+            justify-items: center;
+            align-self: baseline;
+            left: 35px;
+
+            img{
+                width: 0.7em;
+                cursor: pointer;
+            }
+            span{
+                color: $M-Primary-c;
+                font-size: 0.5em;
+                font-weight: bold;
+            }
+        }
+        p{
+            padding: 0px 0px 20px 40px;
+        }
+        p:nth-child(1){
+            color: black;
+            font-weight: bold;
+            width: 100%;
+            line-height: 1.5em;
+            width: 95%;
+            text-align: left;
+            font-size: 1em;
+            padding: 0px 0px 10px 0px;
+        }
     }
 }
 
@@ -275,7 +318,8 @@ main{
             left: 4%;
 
             img{
-                width: 1.5em;
+                width: 1.3em;
+                cursor: pointer;
             }
             span{
                 color: $M-Primary-c;
@@ -303,7 +347,7 @@ main{
         }
 
         .rule{
-            width: 90%;
+            width: 100%;
             color: $bg-c;
             margin-top: 20px;
         }
@@ -311,7 +355,7 @@ main{
         .content-bottom{
             display: grid;
             grid-template-columns: auto auto;
-            width: 95%;
+            width: 100%;
             margin-top: 20px;
             color: grey;
             div{
@@ -332,7 +376,7 @@ main{
                 }
             }
             div:last-child{
-                justify-content: space-around;
+                justify-content: flex-end;
             }
             .user-img{
                 width: 20px;
@@ -379,7 +423,7 @@ main{
 
 
 
-// tablet view at 810px
+// tablet view at 810px(w)
 @media screen and (min-width: 810px) {
     .header{
         .search-area{
@@ -408,22 +452,29 @@ main{
                 text-align: left;
             }
             .content-bottom{
+                justify-content: space-between;
                 font-size: 1.4em;
                 .user-img{
                     width: 30px;
+                }
+                div:last-child{
+                    span{
+                        padding-right: 30px;
+                    }
                 }
             }
         }
     }
 }
 
-// web medium view at 900px
+// web medium view at 900px(w)
 @media screen and (min-width: 900px) {
     .header{
         .search-area{
             visibility: visible;
             width: 60%;
             left: 40%;
+            top: 40px;
         }
         .search-overlay{
             position: inherit;
@@ -446,7 +497,7 @@ main{
         margin-right: 15%;
         .content-box{
             .get-health{
-                right: 40%;
+                right: 33%;
             }
         }
         .section{
@@ -454,7 +505,7 @@ main{
             width: 25%;
             right: 30px;
             top: 140px;
-            border-radius: 0px;
+            border-radius: 8px;
             font-size: 0.9em;
             padding: 10px;
             height: fit-content;
@@ -485,14 +536,14 @@ main{
     }
 }
 
-// web medium view at 1200px
+// web desktop view at 1200px(w)
 @media screen and (min-width: 1200px) {
     main{
         width: 60%;
         margin-left: 20%;
         .content-box{
             .get-health{
-                right: 30%;
+                right: 23%;
             }
         }
         .question{
@@ -554,6 +605,8 @@ main{
         }
     }
 }
+
+// web desktop view at 650px(h) 1200px(w)
 @media screen and (max-height: 650px) and (min-width: 1200px) {
     .container{
         .telegram{
@@ -578,6 +631,15 @@ main{
                     width: 80%;
                 }
             }
+        }
+    }
+}
+
+// web medium view at 600px(h) 900px(w)
+@media screen and(max-height: 600px) and (min-width: 900px) {
+    .right{
+        .my-question{
+            display: none;
         }
     }
 }
