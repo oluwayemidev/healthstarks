@@ -315,15 +315,15 @@ main{
             grid-row-gap: 10px;
             justify-items: center;
             align-self: baseline;
-            left: 4%;
+            left: 40px;
 
             img{
-                width: 1.3em;
+                width: 0.8em;
                 cursor: pointer;
             }
             span{
                 color: $M-Primary-c;
-                font-size: 0.7em;
+                font-size: 0.5em;
                 font-weight: bold;
             }
         }
@@ -447,6 +447,10 @@ main{
             }
         }
         .question{
+            padding-left: 100px;
+            .side-btn{
+                left: 60px;
+            }
             p, p:nth-child(2), p:nth-child(3){
                 width: 100%;
                 text-align: left;
@@ -548,7 +552,7 @@ main{
         }
         .question{
             .side-btn{
-                left: 22%;
+                left: calc(22% + 30px);
             }
         }
     }
